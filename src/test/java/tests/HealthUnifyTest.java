@@ -38,7 +38,7 @@ public class HealthUnifyTest {
         driver.findElement(WEIGHT_FIELD).sendKeys("75");
         driver.findElement(HEIGHT_CMS_FIELD).sendKeys("175");
         driver.findElement(CALCULATE_FIELD).click();
-        actualText = "Your category is Normal";
+        actualText = driver.findElement(By.xpath("//input[@class='content']")).getAttribute("value");
         Assert.assertEquals(actualText, "Your category is Normal", "Conclusion is incorrect");
     }
 
@@ -48,7 +48,7 @@ public class HealthUnifyTest {
         driver.findElement(WEIGHT_FIELD).sendKeys("30");
         driver.findElement(HEIGHT_CMS_FIELD).sendKeys("180");
         driver.findElement(CALCULATE_FIELD).click();
-        actualText = "Your category is Starvation";
+        actualText = driver.findElement(By.xpath("//input[@class='content']")).getAttribute("value");
         Assert.assertEquals(actualText, "Your category is Starvation", "Conclusion is incorrect");
     }
 
@@ -57,7 +57,7 @@ public class HealthUnifyTest {
         driver.findElement(WEIGHT_FIELD).sendKeys("130");
         driver.findElement(HEIGHT_CMS_FIELD).sendKeys("160");
         driver.findElement(CALCULATE_FIELD).click();
-        actualText = "Your category is Obese";
+        actualText = driver.findElement(By.xpath("//input[@class='content']")).getAttribute("value");
         Assert.assertEquals(actualText, "Your category is Obese", "Conclusion is incorrect");
     }
 
